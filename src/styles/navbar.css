@@ -18,7 +18,7 @@ li{
 
   .main-nav{
     background-color: rgb(250, 250, 250);
-    position:fixed;
+    position:relative;
     width: 100%;
     padding: 0 2rem;
   }
@@ -45,7 +45,7 @@ li{
   }
   
   .navbar .toggle_btn{
-    color: #fff;
+    color: #000000;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
