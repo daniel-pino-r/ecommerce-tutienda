@@ -1,7 +1,9 @@
 import { useState, useContext, useEffect } from "react";
-import { convertirPrecio } from "./hooks/convertirP";
-import { actionsCart } from "./hooks/actionsCart";
+
+
 import { UserContext } from "../context/UserContext";
+import { actionsCart } from "../hooks/actionsCart";
+import { convertirPrecio } from "../hooks/convertirP";
 
 export const Cart = () => {
 
@@ -33,11 +35,10 @@ export const Cart = () => {
                     <h3>{product.nombre}</h3>
                     <h4>{product.quantity}</h4>
                     <button
-                      className="btn"
+                      className="btn-remover-producto"
                       onClick={() => handleRemoveItem(product)}
                     >
-                      {" "}
-                      Quitar{" "}
+                      Quitar
                     </button>
                   </li>
                 ))}

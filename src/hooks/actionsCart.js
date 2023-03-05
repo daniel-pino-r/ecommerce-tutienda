@@ -1,10 +1,23 @@
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../context/UserContext";
+
 
 export const actionsCart = () => {
 
   const { cart, setCart, setTotal } = useContext(UserContext);
 
+  const handleAddItem = (item) => { //AGREGAR PRODUCTO AL CARRITO
+    const existingItem = cart.find((i) => i.id === item.id);
+    if (existingItem) {
+      const newCart = cart.map((i) =>
+        i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+      );
+      setCart(newCart);
+    } else {
+      const newCart = [...cart, { ...item, quantity: 1 }];
+      setCart(newCart);
+    }
+  }
 
   const handleRemoveItem = (product) => { //REMOVER PRODUCTO DE CARRITO
     const existingProduct = cart.find((i) => i.id === product.id);
@@ -38,7 +51,8 @@ export const actionsCart = () => {
   return {
     handleRemoveItem,
     totalPrice,
-    totalQuantity
+    totalQuantity,
+    handleAddItem
   }
 
 }

@@ -1,16 +1,14 @@
 import { useState } from "react";
-import { Links } from "./Links";
+import { Links } from "./header/Links";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <>
     <div className="main-nav">
       <div className="navbar">
         <div className="logo">
-          {" "}
-          <a href="">Tu tienda</a>{" "}
+          <a href="">Tu tienda</a>
         </div>
 
         <ul className="links">
@@ -28,6 +26,5 @@ export const Navbar = () => {
         <Links />
       </div>
     </div>
-    </>
   );
 };

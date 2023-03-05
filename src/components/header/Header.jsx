@@ -1,6 +1,5 @@
-import { Navbar } from "./Navbar";
+import { Navbar } from "../Navbar";
 import { Title } from "./Title";
-
 
 export const Header = () => {
 
